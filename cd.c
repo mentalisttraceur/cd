@@ -99,6 +99,7 @@ int error_executing_command(char * command, char * arg0)
     return EXIT_FAILURE;
 }
 
+
 static
 int print_help(char * arg0)
 {
