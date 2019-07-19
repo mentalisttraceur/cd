@@ -28,8 +28,8 @@ char const help_text_prefix[] = "Usage: ";
 char const help_text[] =
     " OPTION|DIRECTORY [COMMAND [ARGUMENT]...]\n"
     "\n"
-    "Executes a command in the given directory. If no command is given,\n"
-    "just tries changing into the directory to check if it works.\n"
+    "Execute a command in the given directory. If no command is\n"
+    "given, just check if changing into the directory works.\n"
     "\n"
     "  -h, --help    Print this help text and exit.\n"
     "  -V, --version Print version information and exit.\n"
