@@ -145,7 +145,7 @@ int main(int argc, char * * argv)
     /* The goal is to shift argv until it points to the command to execute: */
     argv += 1;
 
-    /* First argument is either an option (starts with '-') or a command: */
+    /* First argument is either an option (starts with '-') or a directory: */
     arg = *argv;
 
     if(*arg == '-')
