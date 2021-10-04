@@ -13,15 +13,17 @@
 
 char const version_text[] = "cdexec 1.0.0\n";
 
-char const help_text_prefix[] = "Usage: ";
 char const help_text[] =
-    " OPTION|DIRECTORY [COMMAND [ARGUMENT]...]\n"
+    "Execute a command in the given directory. If no command\n"
+    "is given, just check if going into the directory works.\n"
     "\n"
-    "Execute a command in the given directory. If no command is\n"
-    "given, just check if changing into the directory works.\n"
+    "Usage:\n"
+    "    cdexec <directory> [<command> [<argument>]...]\n"
+    "    cdexec (--help | --version)\n"
     "\n"
-    "  -h, --help    Print this help text and exit.\n"
-    "  -V, --version Print version information and exit.\n"
+    "Options:\n"
+    "    -h, --help    Print this help text and exit.\n"
+    "    -V, --version Print version information and exit.\n"
 ;
 
 
@@ -93,9 +95,7 @@ int error_executing_command(char * command, char * arg0)
 static
 int print_help(char * arg0)
 {
-    if(fputs(help_text_prefix, stdout) != EOF
-    && fputs(arg0, stdout) != EOF
-    && fputs(help_text, stdout) != EOF
+    if(fputs(help_text, stdout) != EOF
     && fflush(stdout) != EOF)
     {
         return EXIT_SUCCESS;
