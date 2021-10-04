@@ -1,10 +1,18 @@
-# `cd` (as an external command)
+# `cdexec`
 
-A small command-line program for running
-a program in a given directory (folder).
+`cdexec` fills the gaps where `cd` (or `pushd`
+and `popd`) is awkward or cannot reach.
 
-# Why?
+It changes directory, then executes another command.
 
-It nicely fills the gaps where the `cd` builtin of your shell cannot
-reach, and where invoking a new shell or other interpreter would be
-needlessly verbose and inconvenient - for example right after `sudo`.
+For example, sometimes I want to do something inside a
+`git` work tree while my shell is in another folder.
+So instead of all this
+
+    $ pushd path-to/my-repo
+    $ git log
+    $ popd
+
+I just type
+
+    $ cdexec path-to/my-repo git log
