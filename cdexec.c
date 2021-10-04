@@ -22,8 +22,8 @@ char const help_text[] =
     "    cdexec (--help | --version)\n"
     "\n"
     "Options:\n"
-    "    -h, --help    Print this help text and exit.\n"
-    "    -V, --version Print version information and exit.\n"
+    "    -h --help     show this help text\n"
+    "    -V --version  show version information\n"
 ;
 
 
