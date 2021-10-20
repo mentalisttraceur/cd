@@ -28,11 +28,11 @@ char const help_text[] =
 
 
 static
-int error_no_arguments(char * arg0)
+int error_need_directory(char * arg0)
 {
     if(fputs(arg0, stderr) != EOF)
     {
-        fputs(": need directory or option argument\n", stderr);
+        fputs(": need directory argument\n", stderr);
     }
     return EXIT_FAILURE;
 }
@@ -129,7 +129,7 @@ int main(int argc, char * * argv)
         {
             arg0 = "";
         }
-        return error_no_arguments(arg0);
+        return error_need_directory(arg0);
     }
 
     /* The goal is to shift argv until it points to the command to execute: */
@@ -162,7 +162,7 @@ int main(int argc, char * * argv)
         /* But a "--" with no arguments after it is the same as (argc < 2): */
         if(!arg)
         {
-            return error_no_arguments(arg0);
+            return error_need_directory(arg0);
         }
     }
 
