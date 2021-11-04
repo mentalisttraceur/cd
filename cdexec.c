@@ -18,7 +18,7 @@ char const help_text[] =
     "is given, just check if going into the directory works.\n"
     "\n"
     "Usage:\n"
-    "    cdexec <directory> [<command> [<argument>]...]\n"
+    "    cdexec [--] <directory> [<command> [<argument>]...]\n"
     "    cdexec (--help | --version) [<ignored>]...\n"
     "\n"
     "Options:\n"
