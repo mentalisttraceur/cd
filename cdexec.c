@@ -19,7 +19,7 @@ char const help_text[] =
     "\n"
     "Usage:\n"
     "    cdexec <directory> [<command> [<argument>]...]\n"
-    "    cdexec (--help | --version)\n"
+    "    cdexec (--help | --version) [<ignored>]...\n"
     "\n"
     "Options:\n"
     "    -h --help     show this help text\n"
