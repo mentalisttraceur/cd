@@ -27,10 +27,10 @@ char const help_text[] =
     "\n"
     "Errors:\n"
     "    need directory argument\n"
-    "    bad option\n"
-    "    error writing output\n"
-    "    error changing directory\n"
-    "    error executing command\n"
+    "    bad option: <option>\n"
+    "    error writing output: <...>\n"
+    "    error changing directory: <directory>: <...>\n"
+    "    error executing command: <command>: <...>\n"
 ;
 
 
