@@ -24,6 +24,13 @@ char const help_text[] =
     "Options:\n"
     "    -h --help     show this help text\n"
     "    -V --version  show version information\n"
+    "\n"
+    "Errors:\n"
+    "    need directory argument\n"
+    "    bad option\n"
+    "    error writing output\n"
+    "    error changing directory\n"
+    "    error executing command\n"
 ;
 
 
