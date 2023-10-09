@@ -3,7 +3,7 @@
 
 /* Standard C library headers */
 #include <errno.h> /* errno */
-#include <stdio.h> /* EOF, fputc, fputs, perror, stderr, stdout */
+#include <stdio.h> /* EOF, fflush, fputc, fputs, perror, stderr, stdout */
 #include <stdlib.h> /* EXIT_SUCCESS, EXIT_FAILURE */
 #include <string.h> /* strcmp */
 
