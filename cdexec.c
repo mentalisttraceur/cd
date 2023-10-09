@@ -46,7 +46,7 @@ int error_need_directory(char * arg0)
 
 
 static
-int error_bad_option(char * option, char * arg0)
+int error_bad_option(char * arg0, char * option)
 {
     if(fputs(arg0, stderr) != EOF
     && fputs(": bad option: ", stderr) != EOF
@@ -72,7 +72,7 @@ int error_writing_output(char * arg0)
 
 
 static
-int error_changing_directory(char * directory, char * arg0)
+int error_changing_directory(char * arg0, char * directory)
 {
     int errno_ = errno;
     if(fputs(arg0, stderr) != EOF
@@ -86,7 +86,7 @@ int error_changing_directory(char * directory, char * arg0)
 
 
 static
-int error_executing_command(char * command, char * arg0)
+int error_executing_command(char * arg0, char * command)
 {
     int errno_ = errno;
     if(fputs(arg0, stderr) != EOF
@@ -160,7 +160,7 @@ int main(int argc, char * * argv)
         /* If it is *not* the "end of options" ("--") "option": */
         if(strcmp(arg, "-"))
         {
-            return error_bad_option(arg - 1, arg0);
+            return error_bad_option(arg0, arg - 1);
         }
 
         /* The "--" is just skipped, allowing the command to start with '-'. */
@@ -177,7 +177,7 @@ int main(int argc, char * * argv)
 
     if(chdir(arg) == -1)
     {
-        return error_changing_directory(arg, arg0);
+        return error_changing_directory(arg0, arg);
     }
 
     /* Shift argv past the directory, leaving just the command in argv: */
@@ -195,5 +195,5 @@ int main(int argc, char * * argv)
     execvp(arg, argv);
     /* If we're here, execvp failed to execute the command. */
 
-    return error_executing_command(arg, arg0);
+    return error_executing_command(arg0, arg);
 }
