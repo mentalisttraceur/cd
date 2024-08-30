@@ -1,5 +1,7 @@
+CFLAGS ?= -std=c89 -pedantic -O3
+
 default:
-	gcc -std=c89 -pedantic -fPIE -Os -o cdexec cdexec.c
+	$(CC) $(CFLAGS) -o cdexec cdexec.c
 	strip cdexec
 
 clean:
